@@ -1,0 +1,28 @@
+server: 
+  port: 9527 #将 Tomcat 默认端口 8080设置为9527
+  servlet:
+    context-path: /dovepay #将默认的访问路径从 “/” 修改为 “/dovepay
+  tomcat:
+    max-threads: 500
+    
+#参数配置    
+name: tom
+age: 21
+context: "name:${name},age:${age}"
+
+student: 
+  uname: jason
+  uage: 22
+  like: cat
+
+spring:
+  devtools:
+    restart:
+      #exclude: HelloController.java
+      trigger-file: trigger.txt  #通过触发器，手动控制文件什么时候部署
+     
+#mysql数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf-8
+    username: root
+    password: root
